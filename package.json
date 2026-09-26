@@ -1,0 +1,637 @@
+{
+  "name": "github-actions-live",
+  "displayName": "GitHub Actions Live",
+  "description": "Watch GitHub Actions runs live in VS Code: jobs and steps as they run, every check of your commit in the status bar, logs that open on the failing line, re-run, cancel, artifacts, deployments, Fix in Chat. Pro: CI errors in Problems, notifications, compare with the last green run, flaky and slow steps.",
+  "version": "0.3.0",
+  "publisher": "adck8888",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Testing",
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "github actions",
+    "github",
+    "actions",
+    "ci",
+    "ci/cd",
+    "workflow",
+    "workflow runs",
+    "build status",
+    "ci status",
+    "pipeline",
+    "logs",
+    "github actions logs",
+    "re-run",
+    "workflow_dispatch",
+    "github enterprise",
+    "devops",
+    "status bar",
+    "notifications",
+    "artifacts",
+    "deployments",
+    "flaky tests",
+    "copilot",
+    "vercel",
+    "checks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adck8888/github-actions-live.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adck8888/github-actions-live/issues"
+  },
+  "homepage": "https://github.com/adck8888/github-actions-live#readme",
+  "galleryBanner": {
+    "color": "#0D1117",
+    "theme": "dark"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "workspaceContains:.git",
+    "workspaceContains:.github/workflows"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "actionsLive",
+          "title": "Actions Live",
+          "icon": "media/activity.svg"
+        }
+      ]
+    },
+    "views": {
+      "actionsLive": [
+        {
+          "id": "actionsLive.runs",
+          "name": "Runs",
+          "icon": "media/activity.svg"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "actionsLive.runs",
+        "contents": "Loading workflow runs…",
+        "when": "actionsLive.state == loading"
+      },
+      {
+        "view": "actionsLive.runs",
+        "contents": "Sign in to GitHub to see the workflow runs of this repository, updated live.\n[Sign in to GitHub](command:actionsLive.signIn)",
+        "when": "actionsLive.state == signin"
+      },
+      {
+        "view": "actionsLive.runs",
+        "contents": "This folder has no GitHub remote. Open a folder cloned from GitHub or GitHub Enterprise to see its workflow runs.",
+        "when": "actionsLive.state == no-repo"
+      },
+      {
+        "view": "actionsLive.runs",
+        "contents": "No workflow runs to show.\n[Run a workflow](command:actionsLive.runWorkflow)",
+        "when": "actionsLive.state == empty && !actionsLive.filtered"
+      },
+      {
+        "view": "actionsLive.runs",
+        "contents": "No runs on this branch yet.\n[Show all branches](command:actionsLive.showAllBranches)",
+        "when": "actionsLive.state == empty-branch && !actionsLive.filtered"
+      }
+    ],
+    "commands": [
+      {
+        "command": "actionsLive.refresh",
+        "title": "Refresh",
+        "category": "Actions Live",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "actionsLive.showCurrentBranch",
+        "title": "Show Only the Current Branch",
+        "category": "Actions Live",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "actionsLive.showAllBranches",
+        "title": "Show All Branches",
+        "category": "Actions Live",
+        "icon": "$(filter-filled)"
+      },
+      {
+        "command": "actionsLive.runWorkflow",
+        "title": "Run Workflow…",
+        "category": "Actions Live",
+        "icon": "$(play)"
+      },
+      {
+        "command": "actionsLive.openLog",
+        "title": "Open Log",
+        "category": "Actions Live",
+        "icon": "$(output)"
+      },
+      {
+        "command": "actionsLive.openBranchRun",
+        "title": "Show CI of the Current Branch",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.rerun",
+        "title": "Re-run All Jobs",
+        "category": "Actions Live",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "actionsLive.rerunFailed",
+        "title": "Re-run Failed Jobs",
+        "category": "Actions Live",
+        "icon": "$(debug-rerun)"
+      },
+      {
+        "command": "actionsLive.cancel",
+        "title": "Cancel Run",
+        "category": "Actions Live",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "actionsLive.openOnGitHub",
+        "title": "Open on GitHub",
+        "category": "Actions Live",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "actionsLive.copyUrl",
+        "title": "Copy Link",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.showErrorsInProblems",
+        "title": "Show CI Errors in Problems (Pro)",
+        "category": "Actions Live",
+        "icon": "$(warning)"
+      },
+      {
+        "command": "actionsLive.clearProblems",
+        "title": "Clear CI Errors from Problems",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.signIn",
+        "title": "Sign in to GitHub",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.getPro",
+        "title": "Get Actions Live Pro",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.enterLicenseKey",
+        "title": "Enter Actions Live Pro Licence Key",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.removeLicense",
+        "title": "Remove Actions Live Pro Licence",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.fixInChat",
+        "title": "Fix in Chat",
+        "category": "Actions Live",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "actionsLive.compareWithLastGreen",
+        "title": "Compare with Last Green Run (Pro)",
+        "category": "Actions Live",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "actionsLive.workflowHealth",
+        "title": "Workflow Health: Flaky and Slow Steps (Pro)",
+        "category": "Actions Live",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "actionsLive.filter",
+        "title": "Filter Runs…",
+        "category": "Actions Live",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "actionsLive.clearFilters",
+        "title": "Clear Run Filters",
+        "category": "Actions Live",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "actionsLive.showWorkflowRuns",
+        "title": "Show Runs of This Workflow",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.loadMore",
+        "title": "Load More Runs",
+        "category": "Actions Live"
+      },
+      {
+        "command": "actionsLive.downloadArtifact",
+        "title": "Download Artifact",
+        "category": "Actions Live",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "actionsLive.reviewDeployments",
+        "title": "Review Deployments…",
+        "category": "Actions Live",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "actionsLive.openRun",
+        "title": "Open Run",
+        "category": "Actions Live",
+        "icon": "$(preview)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "actionsLive.runWorkflow",
+          "when": "view == actionsLive.runs",
+          "group": "navigation@1"
+        },
+        {
+          "command": "actionsLive.showCurrentBranch",
+          "when": "view == actionsLive.runs && !actionsLive.branchOnly",
+          "group": "navigation@2"
+        },
+        {
+          "command": "actionsLive.showAllBranches",
+          "when": "view == actionsLive.runs && actionsLive.branchOnly",
+          "group": "navigation@2"
+        },
+        {
+          "command": "actionsLive.filter",
+          "when": "view == actionsLive.runs && !actionsLive.filtered",
+          "group": "navigation@3"
+        },
+        {
+          "command": "actionsLive.clearFilters",
+          "when": "view == actionsLive.runs && actionsLive.filtered",
+          "group": "navigation@3"
+        },
+        {
+          "command": "actionsLive.refresh",
+          "when": "view == actionsLive.runs",
+          "group": "navigation@4"
+        },
+        {
+          "command": "actionsLive.workflowHealth",
+          "when": "view == actionsLive.runs",
+          "group": "1_reports@1"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "actionsLive.openRun",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-/",
+          "group": "inline@3"
+        },
+        {
+          "command": "actionsLive.openRun",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-/",
+          "group": "0_open@0"
+        },
+        {
+          "command": "actionsLive.reviewDeployments",
+          "when": "view == actionsLive.runs && viewItem == run-active-waiting",
+          "group": "inline@0"
+        },
+        {
+          "command": "actionsLive.cancel",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-active/",
+          "group": "inline@1"
+        },
+        {
+          "command": "actionsLive.rerunFailed",
+          "when": "view == actionsLive.runs && viewItem == run-failed",
+          "group": "inline@1"
+        },
+        {
+          "command": "actionsLive.rerun",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-(done|failed)$/",
+          "group": "inline@2"
+        },
+        {
+          "command": "actionsLive.fixInChat",
+          "when": "view == actionsLive.runs && viewItem == job-failed",
+          "group": "inline@1"
+        },
+        {
+          "command": "actionsLive.openLog",
+          "when": "view == actionsLive.runs && viewItem =~ /^job-(done|failed)$/",
+          "group": "inline@2"
+        },
+        {
+          "command": "actionsLive.downloadArtifact",
+          "when": "view == actionsLive.runs && viewItem == artifact",
+          "group": "inline@1"
+        },
+        {
+          "command": "actionsLive.openOnGitHub",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-/",
+          "group": "inline@9"
+        },
+        {
+          "command": "actionsLive.reviewDeployments",
+          "when": "view == actionsLive.runs && viewItem == run-active-waiting",
+          "group": "1_actions@0"
+        },
+        {
+          "command": "actionsLive.rerunFailed",
+          "when": "view == actionsLive.runs && viewItem == run-failed",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "actionsLive.rerun",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-(done|failed)$/",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "actionsLive.cancel",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-active/",
+          "group": "1_actions@3"
+        },
+        {
+          "command": "actionsLive.openLog",
+          "when": "view == actionsLive.runs && viewItem =~ /^job-/",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "actionsLive.fixInChat",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-failed$/",
+          "group": "2_fix@1"
+        },
+        {
+          "command": "actionsLive.showErrorsInProblems",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-failed$/",
+          "group": "2_fix@2"
+        },
+        {
+          "command": "actionsLive.compareWithLastGreen",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-failed$/",
+          "group": "2_fix@3"
+        },
+        {
+          "command": "actionsLive.workflowHealth",
+          "when": "view == actionsLive.runs && viewItem =~ /^run-/",
+          "group": "3_reports@1"
+        },
+        {
+          "command": "actionsLive.downloadArtifact",
+          "when": "view == actionsLive.runs && viewItem == artifact",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "actionsLive.openOnGitHub",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-/",
+          "group": "9_links@1"
+        },
+        {
+          "command": "actionsLive.copyUrl",
+          "when": "view == actionsLive.runs && viewItem =~ /^(run|job)-/",
+          "group": "9_links@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "actionsLive.openLog",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.showWorkflowRuns",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.rerun",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.rerunFailed",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.cancel",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.openOnGitHub",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.copyUrl",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.fixInChat",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.showErrorsInProblems",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.compareWithLastGreen",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.loadMore",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.downloadArtifact",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.reviewDeployments",
+          "when": "false"
+        },
+        {
+          "command": "actionsLive.openRun",
+          "when": "false"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "actions-log",
+        "aliases": [
+          "GitHub Actions Log"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "actions-log",
+        "scopeName": "text.log.github-actions",
+        "path": "./syntaxes/actions-log.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "GitHub Actions Live",
+      "properties": {
+        "actionsLive.statusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the CI status of the current branch's last commit in the status bar."
+        },
+        "actionsLive.pollSeconds": {
+          "type": "number",
+          "default": 5,
+          "minimum": 3,
+          "maximum": 120,
+          "description": "How often to check GitHub while a run is queued or in progress. With nothing running, checks are six times rarer, and rarer still while VS Code is in the background. Unchanged answers do not count against GitHub's rate limit."
+        },
+        "actionsLive.showTimestamps": {
+          "type": "boolean",
+          "default": false,
+          "description": "Keep the time of every line in opened logs."
+        },
+        "actionsLive.codeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the last run, pass rate and Run workflow above workflow files in .github/workflows."
+        },
+        "actionsLive.notifications": {
+          "type": "string",
+          "enum": [
+            "mine",
+            "failures",
+            "off"
+          ],
+          "enumDescriptions": [
+            "When a run on your current branch, or one you started, finishes.",
+            "Only when one of those runs fails.",
+            "Never."
+          ],
+          "default": "mine",
+          "markdownDescription": "**Pro.** Notify when CI finishes, or a deployment waits for your review, so you can switch to something else after a push."
+        },
+        "actionsLive.problemsOnFailure": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Pro.** When CI fails on the current commit, put its errors in the Problems panel, on the lines of your files they point to — moved along with your edits since."
+        },
+        "actionsLive.systemNotifications": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Pro.** While VS Code is in the background, also show those notifications as notifications of the operating system."
+        }
+      }
+    },
+    "languageModelTools": [
+      {
+        "name": "actionsLive_ciFailures",
+        "toolReferenceName": "ciFailures",
+        "displayName": "CI Failures",
+        "icon": "$(error)",
+        "canBeReferencedInPrompt": true,
+        "userDescription": "What failed in GitHub Actions for the current commit: the failing part of each log, annotations and the code they point to.",
+        "modelDescription": "Gets why GitHub Actions CI failed for the commit checked out in the workspace (or for a given run id): for each failed job, the failing step, the lines of the log leading up to the error, check annotations, and the lines of workspace files the errors point to. Use it when the user asks why CI, the build, tests or a workflow failed, or asks to fix CI.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "runId": {
+              "type": "number",
+              "description": "A workflow run id. Leave it out for the latest failed run of the current commit or branch."
+            }
+          }
+        }
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "gettingStarted",
+        "title": "Get Started with GitHub Actions Live",
+        "description": "See CI of the code you are working on without leaving the editor.",
+        "steps": [
+          {
+            "id": "signIn",
+            "title": "Sign in to GitHub",
+            "description": "Actions Live reads runs with the GitHub account VS Code already knows. GitHub Enterprise Server works too.\n[Sign in to GitHub](command:actionsLive.signIn)",
+            "media": {
+              "markdown": "media/walkthrough/signin.md"
+            },
+            "completionEvents": [
+              "onCommand:actionsLive.signIn"
+            ]
+          },
+          {
+            "id": "seeRuns",
+            "title": "Watch CI live",
+            "description": "The Runs view updates while jobs run, and the status bar shows every check of your commit and its pull request.\n[Show the Runs view](command:actionsLive.runs.focus)",
+            "media": {
+              "markdown": "media/walkthrough/runs.md"
+            },
+            "completionEvents": [
+              "onView:actionsLive.runs"
+            ]
+          },
+          {
+            "id": "openRun",
+            "title": "See why a run failed",
+            "description": "Open a run to see the failing lines, a timeline of where the time went, and every action in one place. Or click the CI item in the status bar.\n[Open the run of this branch](command:actionsLive.openBranchRun)",
+            "media": {
+              "markdown": "media/walkthrough/failure.md"
+            },
+            "completionEvents": [
+              "onCommand:actionsLive.openRun",
+              "onCommand:actionsLive.openBranchRun"
+            ]
+          },
+          {
+            "id": "pro",
+            "title": "Try Pro free for 7 days",
+            "description": "CI errors in Problems on the right lines of your files, system notifications, compare with the last green run, and workflow health. No card needed.\n[Try Pro](command:actionsLive.getPro)",
+            "media": {
+              "markdown": "media/walkthrough/pro.md"
+            },
+            "completionEvents": [
+              "onCommand:actionsLive.getPro"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run check-types && npm run lint && npm run bundle -- --minify",
+    "bundle": "node esbuild.js",
+    "check-types": "tsc --noEmit -p tsconfig.json",
+    "compile": "tsc -p tsconfig.json",
+    "lint": "eslint src",
+    "test": "npm run compile && mocha \"out/test/**/*.test.js\"",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.0",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.38.0",
+    "mocha": "^11.7.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.0"
+  }
+}

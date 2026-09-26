@@ -1,0 +1,45 @@
+﻿2026-09-22T17:45:46.1914544Z Current runner version: '2.337.0'
+2026-09-22T17:45:46.1952519Z ##[group]Runner Image Provisioner
+2026-09-22T17:45:46.1953861Z Hosted Compute Agent
+2026-09-22T17:45:46.1954922Z Version: 20260828.587
+2026-09-22T17:45:46.1956077Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-22T17:45:46.1957265Z Build Date: 2026-08-28T16:44:25Z
+2026-09-22T17:45:46.1958545Z Worker ID: {69c52a36-e404-4f8d-a1f8-89d7fcf651b2}
+2026-09-22T17:45:46.1959713Z Azure Region: eastus
+2026-09-22T17:45:46.1960991Z ##[endgroup]
+2026-09-22T17:45:46.1963259Z ##[group]Operating System
+2026-09-22T17:45:46.1964354Z Ubuntu
+2026-09-22T17:45:46.1965779Z 24.04.5
+2026-09-22T17:45:46.1966630Z LTS
+2026-09-22T17:45:46.1967447Z ##[endgroup]
+2026-09-22T17:45:46.1968496Z ##[group]Runner Image
+2026-09-22T17:45:46.1969443Z Image: ubuntu-24.04
+2026-09-22T17:45:46.1970735Z Version: 20260907.300.1
+2026-09-22T17:45:46.1972826Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-22T17:45:46.1975707Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+2026-09-22T17:45:46.1977444Z ##[endgroup]
+2026-09-22T17:45:46.1979279Z ##[group]GITHUB_TOKEN Permissions
+2026-09-22T17:45:46.1982533Z Issues: write
+2026-09-22T17:45:46.1983523Z Metadata: read
+2026-09-22T17:45:46.1984396Z ##[endgroup]
+2026-09-22T17:45:46.1987511Z Secret source: Actions
+2026-09-22T17:45:46.1989020Z Cache mode: read
+2026-09-22T17:45:46.1990809Z Prepare workflow directory
+2026-09-22T17:45:46.2394082Z Prepare all required actions
+2026-09-22T17:45:46.2503982Z Uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-on-issue-close.yml@df758d511475056e61d6d3a123621a854f10c646
+2026-09-22T17:45:46.2510502Z ##[group] Inputs
+2026-09-22T17:45:46.2511387Z   labels_to_remove: needs-triage
+2026-09-22T17:45:46.2512118Z ##[endgroup]
+2026-09-22T17:45:46.2512736Z Complete job name: on-issue-close / label_issues
+2026-09-22T17:45:46.3340697Z ##[group]Run gh issue edit "$NUMBER" --remove-label "$LABELS"
+2026-09-22T17:45:46.3341792Z [36;1mgh issue edit "$NUMBER" --remove-label "$LABELS"[0m
+2026-09-22T17:45:46.3905711Z shell: /usr/bin/bash -e {0}
+2026-09-22T17:45:46.3907031Z env:
+2026-09-22T17:45:46.3912365Z   GH_TOKEN: ***
+2026-09-22T17:45:46.3913051Z   GH_REPO: cli/cli
+2026-09-22T17:45:46.3913636Z   NUMBER: 14491
+2026-09-22T17:45:46.3914190Z   LABELS: needs-triage
+2026-09-22T17:45:46.3914825Z ##[endgroup]
+2026-09-22T17:45:48.4795425Z GraphQL: Could not resolve to an issue or pull request with the number of 14491. (repository.issue)
+2026-09-22T17:45:48.4821192Z ##[error]Process completed with exit code 1.
+2026-09-22T17:45:48.4972789Z Cleaning up orphan processes

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "GitHub Actions Log",
+  "scopeName": "text.log.github-actions",
+  "patterns": [
+    { "name": "markup.deleted.step-failed.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?━━ ✖ .*$" },
+    { "name": "markup.heading.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?━━ .*$" },
+    { "name": "invalid.illegal.error.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?✖ .*$" },
+    { "name": "markup.changed.warning.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?⚠ .*$" },
+    { "name": "markup.quote.notice.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?ℹ .*$" },
+    { "name": "entity.name.section.group.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?▾ .*$" },
+    { "name": "string.unquoted.command.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?\\$ .*$" },
+    { "name": "comment.line.debug.github-actions", "match": "^(?:\\d\\d:\\d\\d:\\d\\d )?· .*$" },
+    { "name": "constant.numeric.time.github-actions", "match": "^\\d\\d:\\d\\d:\\d\\d(?= )" },
+    { "name": "invalid.illegal.error.github-actions", "match": "\\b(?:[A-Z][A-Za-z]*Error|ERROR|FAIL(?:ED)?|error(?:\\[E\\d+\\])?:|panicked at)" },
+    { "name": "markup.inserted.pass.github-actions", "match": "(?:✓|✔|\\bPASS(?:ED)?\\b)" },
+    { "name": "markup.underline.link.github-actions", "match": "https?://[^\\s)\"'>]+" }
+  ]
+}

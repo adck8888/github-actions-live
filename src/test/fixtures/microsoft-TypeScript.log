@@ -1,0 +1,561 @@
+﻿2026-09-25T23:30:33.6169430Z Current runner version: '2.337.0'
+2026-09-25T23:30:33.6205803Z ##[group]Runner Image Provisioner
+2026-09-25T23:30:33.6207688Z Hosted Compute Agent
+2026-09-25T23:30:33.6208809Z Version: 20260828.587
+2026-09-25T23:30:33.6209907Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-25T23:30:33.6211227Z Build Date: 2026-08-28T16:44:25Z
+2026-09-25T23:30:33.6212383Z Worker ID: {7f0df29a-8dbf-47d5-b8bd-8c2a8ff8b392}
+2026-09-25T23:30:33.6213737Z Azure Region: eastus2
+2026-09-25T23:30:33.6214727Z ##[endgroup]
+2026-09-25T23:30:33.6217862Z ##[group]Operating System
+2026-09-25T23:30:33.6219093Z Ubuntu
+2026-09-25T23:30:33.6219999Z 24.04.5
+2026-09-25T23:30:33.6220935Z LTS
+2026-09-25T23:30:33.6221895Z ##[endgroup]
+2026-09-25T23:30:33.6222882Z ##[group]Runner Image
+2026-09-25T23:30:33.6223980Z Image: ubuntu-24.04
+2026-09-25T23:30:33.6225004Z Version: 20260920.314.1
+2026-09-25T23:30:33.6227509Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-25T23:30:33.6230372Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-25T23:30:33.6232129Z ##[endgroup]
+2026-09-25T23:30:33.6234040Z ##[group]GITHUB_TOKEN Permissions
+2026-09-25T23:30:33.6237292Z Contents: read
+2026-09-25T23:30:33.6238391Z Metadata: read
+2026-09-25T23:30:33.6239473Z ##[endgroup]
+2026-09-25T23:30:33.6242450Z Secret source: None
+2026-09-25T23:30:33.6244049Z Cache mode: write
+2026-09-25T23:30:33.6245656Z Prepare workflow directory
+2026-09-25T23:30:33.6821875Z Prepare all required actions
+2026-09-25T23:30:33.6892243Z Getting action download info
+2026-09-25T23:30:33.9213694Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-25T23:30:34.0570556Z Download action repository 'actions/setup-node@820762786026740c76f36085b0efc47a31fe5020' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+2026-09-25T23:30:34.2407769Z Complete job name: generate
+2026-09-25T23:30:34.3207239Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-25T23:30:34.3208591Z with:
+2026-09-25T23:30:34.3209059Z   repository: microsoft/TypeScript
+2026-09-25T23:30:34.3213059Z   token: ***
+2026-09-25T23:30:34.3213499Z   ssh-strict: true
+2026-09-25T23:30:34.3213941Z   ssh-user: git
+2026-09-25T23:30:34.3214404Z   persist-credentials: true
+2026-09-25T23:30:34.3214900Z   clean: true
+2026-09-25T23:30:34.3215352Z   sparse-checkout-cone-mode: true
+2026-09-25T23:30:34.3215881Z   fetch-depth: 1
+2026-09-25T23:30:34.3216324Z   fetch-tags: false
+2026-09-25T23:30:34.3216773Z   show-progress: true
+2026-09-25T23:30:34.3217439Z   lfs: false
+2026-09-25T23:30:34.3217856Z   submodules: false
+2026-09-25T23:30:34.3218305Z   set-safe-directory: true
+2026-09-25T23:30:34.3218820Z   allow-unsafe-pr-checkout: false
+2026-09-25T23:30:34.3219719Z ##[endgroup]
+2026-09-25T23:30:34.4216683Z Syncing repository: microsoft/TypeScript
+2026-09-25T23:30:34.4219414Z ##[group]Getting Git version info
+2026-09-25T23:30:34.4220216Z Working directory is '/home/runner/work/TypeScript/TypeScript'
+2026-09-25T23:30:34.4221396Z [command]/usr/bin/git version
+2026-09-25T23:30:34.4299770Z git version 2.55.0
+2026-09-25T23:30:34.4322087Z ##[endgroup]
+2026-09-25T23:30:34.4332958Z Temporarily overriding HOME='/home/runner/work/_temp/31c0edad-eebd-4089-b56e-a3dee01ea01f' before making global git config changes
+2026-09-25T23:30:34.4335411Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-25T23:30:34.4339743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TypeScript/TypeScript
+2026-09-25T23:30:34.4390179Z Deleting the contents of '/home/runner/work/TypeScript/TypeScript'
+2026-09-25T23:30:34.4393625Z ##[group]Determining repository object format
+2026-09-25T23:30:34.4395219Z ##[endgroup]
+2026-09-25T23:30:34.4395984Z ##[group]Initializing the repository
+2026-09-25T23:30:34.4399972Z [command]/usr/bin/git init /home/runner/work/TypeScript/TypeScript
+2026-09-25T23:30:34.4520827Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-25T23:30:34.4522030Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-25T23:30:34.4523101Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-25T23:30:34.4523903Z hint: call:
+2026-09-25T23:30:34.4524570Z hint:
+2026-09-25T23:30:34.4525411Z hint: 	git config --global init.defaultBranch <name>
+2026-09-25T23:30:34.4526137Z hint:
+2026-09-25T23:30:34.4527121Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-25T23:30:34.4528557Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-25T23:30:34.4530106Z hint:
+2026-09-25T23:30:34.4530830Z hint: 	git branch -m <name>
+2026-09-25T23:30:34.4531484Z hint:
+2026-09-25T23:30:34.4532149Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-25T23:30:34.4533587Z Initialized empty Git repository in /home/runner/work/TypeScript/TypeScript/.git/
+2026-09-25T23:30:34.4535960Z [command]/usr/bin/git remote add origin https://github.com/microsoft/TypeScript
+2026-09-25T23:30:34.4584734Z ##[endgroup]
+2026-09-25T23:30:34.4585523Z ##[group]Disabling automatic garbage collection
+2026-09-25T23:30:34.4588453Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-25T23:30:34.4618438Z ##[endgroup]
+2026-09-25T23:30:34.4619869Z ##[group]Setting up auth
+2026-09-25T23:30:34.4620715Z Removing SSH command configuration
+2026-09-25T23:30:34.4623696Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-25T23:30:34.4654768Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-25T23:30:34.5021338Z Removing HTTP extra header
+2026-09-25T23:30:34.5026767Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-25T23:30:34.5060150Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-25T23:30:34.5275152Z Removing includeIf entries pointing to credentials config files
+2026-09-25T23:30:34.5280269Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-25T23:30:34.5312694Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-25T23:30:34.5534064Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-25T23:30:34.5570218Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/TypeScript/TypeScript/.git.path /home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:30:34.5601073Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/TypeScript/TypeScript/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:30:34.5635713Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:30:34.5666672Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:30:34.5694733Z ##[endgroup]
+2026-09-25T23:30:34.5695484Z ##[group]Fetching the repository
+2026-09-25T23:30:34.5702243Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d56f822ed9aa61a3d1125740f93f4ab88f9d4a4d:refs/remotes/pull/64457/merge
+2026-09-25T23:30:37.0855043Z From https://github.com/microsoft/TypeScript
+2026-09-25T23:30:37.0856847Z  * [new ref]           d56f822ed9aa61a3d1125740f93f4ab88f9d4a4d -> pull/64457/merge
+2026-09-25T23:30:37.0864362Z ##[endgroup]
+2026-09-25T23:30:37.0865784Z ##[group]Determining the checkout info
+2026-09-25T23:30:37.0867520Z ##[endgroup]
+2026-09-25T23:30:37.0869712Z [command]/usr/bin/git sparse-checkout disable
+2026-09-25T23:30:37.0933138Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-25T23:30:37.0964595Z ##[group]Checking out the ref
+2026-09-25T23:30:37.0967438Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/64457/merge
+2026-09-25T23:30:38.1503299Z Updating files:  31% (21205/66692)
+2026-09-25T23:30:38.1822241Z Updating files:  32% (21342/66692)
+2026-09-25T23:30:38.2100276Z Updating files:  33% (22009/66692)
+2026-09-25T23:30:38.2393232Z Updating files:  34% (22676/66692)
+2026-09-25T23:30:38.2734932Z Updating files:  35% (23343/66692)
+2026-09-25T23:30:38.3116446Z Updating files:  36% (24010/66692)
+2026-09-25T23:30:38.3459838Z Updating files:  37% (24677/66692)
+2026-09-25T23:30:38.3763611Z Updating files:  38% (25343/66692)
+2026-09-25T23:30:38.4065625Z Updating files:  39% (26010/66692)
+2026-09-25T23:30:38.4354320Z Updating files:  40% (26677/66692)
+2026-09-25T23:30:38.4682810Z Updating files:  41% (27344/66692)
+2026-09-25T23:30:38.4951415Z Updating files:  42% (28011/66692)
+2026-09-25T23:30:38.5213323Z Updating files:  43% (28678/66692)
+2026-09-25T23:30:38.5468056Z Updating files:  44% (29345/66692)
+2026-09-25T23:30:38.5797325Z Updating files:  45% (30012/66692)
+2026-09-25T23:30:38.6067416Z Updating files:  46% (30679/66692)
+2026-09-25T23:30:38.6365998Z Updating files:  47% (31346/66692)
+2026-09-25T23:30:38.6637727Z Updating files:  48% (32013/66692)
+2026-09-25T23:30:38.6937888Z Updating files:  49% (32680/66692)
+2026-09-25T23:30:38.7239702Z Updating files:  50% (33346/66692)
+2026-09-25T23:30:38.7528387Z Updating files:  51% (34013/66692)
+2026-09-25T23:30:38.7818395Z Updating files:  52% (34680/66692)
+2026-09-25T23:30:38.8131628Z Updating files:  53% (35347/66692)
+2026-09-25T23:30:38.8470815Z Updating files:  54% (36014/66692)
+2026-09-25T23:30:38.8786962Z Updating files:  55% (36681/66692)
+2026-09-25T23:30:38.9063043Z Updating files:  56% (37348/66692)
+2026-09-25T23:30:38.9362162Z Updating files:  57% (38015/66692)
+2026-09-25T23:30:38.9643181Z Updating files:  58% (38682/66692)
+2026-09-25T23:30:38.9946079Z Updating files:  59% (39349/66692)
+2026-09-25T23:30:39.0238184Z Updating files:  60% (40016/66692)
+2026-09-25T23:30:39.0495825Z Updating files:  61% (40683/66692)
+2026-09-25T23:30:39.0763881Z Updating files:  62% (41350/66692)
+2026-09-25T23:30:39.1125959Z Updating files:  63% (42016/66692)
+2026-09-25T23:30:39.1384359Z Updating files:  64% (42683/66692)
+2026-09-25T23:30:39.1441408Z Updating files:  65% (43350/66692)
+2026-09-25T23:30:39.1637435Z Updating files:  65% (43498/66692)
+2026-09-25T23:30:39.1894312Z Updating files:  66% (44017/66692)
+2026-09-25T23:30:39.2220270Z Updating files:  67% (44684/66692)
+2026-09-25T23:30:39.2517787Z Updating files:  68% (45351/66692)
+2026-09-25T23:30:39.2803275Z Updating files:  69% (46018/66692)
+2026-09-25T23:30:39.3109444Z Updating files:  70% (46685/66692)
+2026-09-25T23:30:39.3454714Z Updating files:  71% (47352/66692)
+2026-09-25T23:30:39.3727225Z Updating files:  72% (48019/66692)
+2026-09-25T23:30:39.4004972Z Updating files:  73% (48686/66692)
+2026-09-25T23:30:39.4315041Z Updating files:  74% (49353/66692)
+2026-09-25T23:30:39.4593914Z Updating files:  75% (50019/66692)
+2026-09-25T23:30:39.4882607Z Updating files:  76% (50686/66692)
+2026-09-25T23:30:39.5133488Z Updating files:  77% (51353/66692)
+2026-09-25T23:30:39.5419347Z Updating files:  78% (52020/66692)
+2026-09-25T23:30:39.5802815Z Updating files:  79% (52687/66692)
+2026-09-25T23:30:39.6467774Z Updating files:  80% (53354/66692)
+2026-09-25T23:30:39.6761799Z Updating files:  81% (54021/66692)
+2026-09-25T23:30:39.7030358Z Updating files:  82% (54688/66692)
+2026-09-25T23:30:39.7296727Z Updating files:  83% (55355/66692)
+2026-09-25T23:30:39.7556650Z Updating files:  84% (56022/66692)
+2026-09-25T23:30:39.7815766Z Updating files:  85% (56689/66692)
+2026-09-25T23:30:39.8077373Z Updating files:  86% (57356/66692)
+2026-09-25T23:30:39.8351754Z Updating files:  87% (58023/66692)
+2026-09-25T23:30:39.8626388Z Updating files:  88% (58689/66692)
+2026-09-25T23:30:39.8893810Z Updating files:  89% (59356/66692)
+2026-09-25T23:30:39.9160470Z Updating files:  90% (60023/66692)
+2026-09-25T23:30:39.9407032Z Updating files:  91% (60690/66692)
+2026-09-25T23:30:39.9655454Z Updating files:  92% (61357/66692)
+2026-09-25T23:30:39.9927322Z Updating files:  93% (62024/66692)
+2026-09-25T23:30:40.0188921Z Updating files:  94% (62691/66692)
+2026-09-25T23:30:40.0445096Z Updating files:  95% (63358/66692)
+2026-09-25T23:30:40.0700899Z Updating files:  96% (64025/66692)
+2026-09-25T23:30:40.0943276Z Updating files:  97% (64692/66692)
+2026-09-25T23:30:40.1206049Z Updating files:  98% (65359/66692)
+2026-09-25T23:30:40.1442200Z Updating files:  99% (66026/66692)
+2026-09-25T23:30:40.1481049Z Updating files:  99% (66624/66692)
+2026-09-25T23:30:40.1481910Z Updating files: 100% (66692/66692)
+2026-09-25T23:30:40.1482337Z Updating files: 100% (66692/66692), done.
+2026-09-25T23:30:40.2107736Z Note: switching to 'refs/remotes/pull/64457/merge'.
+2026-09-25T23:30:40.2108395Z 
+2026-09-25T23:30:40.2108755Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-25T23:30:40.2109473Z changes and commit them, and you can discard any commits you make in this
+2026-09-25T23:30:40.2110189Z state without impacting any branches by switching back to a branch.
+2026-09-25T23:30:40.2110615Z 
+2026-09-25T23:30:40.2110887Z If you want to create a new branch to retain commits you create, you may
+2026-09-25T23:30:40.2111550Z do so (now or later) by using -c with the switch command. Example:
+2026-09-25T23:30:40.2111931Z 
+2026-09-25T23:30:40.2112084Z   git switch -c <new-branch-name>
+2026-09-25T23:30:40.2112338Z 
+2026-09-25T23:30:40.2112482Z Or undo this operation with:
+2026-09-25T23:30:40.2113112Z 
+2026-09-25T23:30:40.2113258Z   git switch -
+2026-09-25T23:30:40.2113442Z 
+2026-09-25T23:30:40.2113693Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-25T23:30:40.2114066Z 
+2026-09-25T23:30:40.2114481Z HEAD is now at d56f822e Merge 9e961a3c4c5d67ff3575e68652924cb0243f88aa into ebb89d1a0d8781d6f7349b3b10c1c99d52f7cb9a
+2026-09-25T23:30:40.2148519Z ##[endgroup]
+2026-09-25T23:30:40.2189375Z [command]/usr/bin/git log -1 --format=%H
+2026-09-25T23:30:40.2212936Z d56f822ed9aa61a3d1125740f93f4ab88f9d4a4d
+2026-09-25T23:30:40.2481331Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-09-25T23:30:40.2481729Z with:
+2026-09-25T23:30:40.2481925Z   node-version: >=22.18.0
+2026-09-25T23:30:40.2482152Z   check-latest: false
+2026-09-25T23:30:40.2485366Z   token: ***
+2026-09-25T23:30:40.2485596Z   package-manager-cache: true
+2026-09-25T23:30:40.2485845Z ##[endgroup]
+2026-09-25T23:30:40.3733155Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-09-25T23:30:40.3736666Z ##[group]Environment details
+2026-09-25T23:30:40.8003680Z node: v24.21.0
+2026-09-25T23:30:40.8004112Z npm: 11.19.0
+2026-09-25T23:30:40.8004445Z yarn: 1.22.22
+2026-09-25T23:30:40.8005989Z ##[endgroup]
+2026-09-25T23:30:40.8010065Z Detected npm as the package manager from package.json's packageManager field. Auto caching has been enabled for npm. If you want to disable it, set package-manager-cache input to false
+2026-09-25T23:30:40.8028827Z [command]/opt/hostedtoolcache/node/24.21.0/x64/bin/npm config get cache
+2026-09-25T23:30:40.9164719Z /home/runner/.npm
+2026-09-25T23:30:41.0026661Z Cache hit for: node-cache-Linux-x64-npm-25aa18ad034d84853f8468cebb25b0da9487ef1e01fa7514a99706bfd7a98d64
+2026-09-25T23:30:41.5112937Z Received 89384282 of 89384282 (100.0%), 183.3 MBs/sec
+2026-09-25T23:30:41.5114214Z Cache Size: ~85 MB (89384282 B)
+2026-09-25T23:30:41.5216666Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1e077a43-26a7-4960-aca2-8607cccad1e9/cache.tzst -P -C /home/runner/work/TypeScript/TypeScript --use-compress-program unzstd
+2026-09-25T23:30:41.7034795Z Cache restored successfully
+2026-09-25T23:30:41.7081603Z Cache restored from key: node-cache-Linux-x64-npm-25aa18ad034d84853f8468cebb25b0da9487ef1e01fa7514a99706bfd7a98d64
+2026-09-25T23:30:41.7323968Z Prepare all required actions
+2026-09-25T23:30:41.7324512Z Getting action download info
+2026-09-25T23:30:41.8320401Z Download action repository 'actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e' (SHA:b7ad1dad31e06c5925ef5d2fc7ad053ef454303e)
+2026-09-25T23:30:42.0495960Z ##[group]Run ./.github/actions/setup-go
+2026-09-25T23:30:42.0496244Z with:
+2026-09-25T23:30:42.0496437Z   go-version: 1.27
+2026-09-25T23:30:42.0496647Z ##[endgroup]
+2026-09-25T23:30:42.0554162Z ##[start-action display=Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e;id=__self.__actions_setup-go]
+2026-09-25T23:30:42.0623623Z ##[group]Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+2026-09-25T23:30:42.0623991Z with:
+2026-09-25T23:30:42.0624179Z   go-version: 1.27
+2026-09-25T23:30:42.0624495Z   go-download-base-url: https://aka.ms/golang/release/latest
+2026-09-25T23:30:42.0624828Z   cache: false
+2026-09-25T23:30:42.0625032Z   check-latest: false
+2026-09-25T23:30:42.0628222Z   token: ***
+2026-09-25T23:30:42.0628447Z ##[endgroup]
+2026-09-25T23:30:42.1761440Z Setup go version spec 1.27
+2026-09-25T23:30:42.1762073Z Using custom Go download base URL: https://aka.ms/golang/release/latest
+2026-09-25T23:30:42.1770199Z Attempting to download 1.27...
+2026-09-25T23:30:42.1771307Z Skipping version listing for known direct-download URL. Constructing download URL directly.
+2026-09-25T23:30:42.1772859Z Constructed direct download URL: https://aka.ms/golang/release/latest/go1.27.linux-amd64.tar.gz
+2026-09-25T23:30:42.1773914Z Install from custom download URL
+2026-09-25T23:30:42.1774898Z Acquiring 1.27 from https://aka.ms/golang/release/latest/go1.27.linux-amd64.tar.gz
+2026-09-25T23:30:42.8469225Z Extracting Go...
+2026-09-25T23:30:42.8601027Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/9677b399-b6c3-4e5a-aa94-16a7ed96895f -f /home/runner/work/_temp/1da65175-48a1-4157-9079-41386d04a2b5
+2026-09-25T23:30:44.7869121Z Successfully extracted go to /home/runner/work/_temp/9677b399-b6c3-4e5a-aa94-16a7ed96895f
+2026-09-25T23:30:44.7939772Z Requested version '1.27' resolved to installed version '1.27.1'
+2026-09-25T23:30:44.7941102Z Adding to the cache ...
+2026-09-25T23:30:50.8922769Z Successfully cached go to /opt/hostedtoolcache/go-87ee608c/1.27.1/x64
+2026-09-25T23:30:50.8924724Z Added go to the path
+2026-09-25T23:30:50.8926851Z Successfully set up Go version 1.27
+2026-09-25T23:30:50.9099032Z go version go1.27.1 linux/amd64
+2026-09-25T23:30:50.9099425Z 
+2026-09-25T23:30:50.9100099Z ##[group]go env
+2026-09-25T23:30:51.0554985Z AR='ar'
+2026-09-25T23:30:51.0555373Z CC='gcc'
+2026-09-25T23:30:51.0555791Z CGO_CFLAGS='-O2 -g'
+2026-09-25T23:30:51.0556188Z CGO_CPPFLAGS=''
+2026-09-25T23:30:51.0556596Z CGO_CXXFLAGS='-O2 -g'
+2026-09-25T23:30:51.0557283Z CGO_ENABLED='1'
+2026-09-25T23:30:51.0557736Z CGO_FFLAGS='-O2 -g'
+2026-09-25T23:30:51.0558142Z CGO_LDFLAGS='-O2 -g'
+2026-09-25T23:30:51.0558509Z CXX='g++'
+2026-09-25T23:30:51.0558850Z GCCGO='gccgo'
+2026-09-25T23:30:51.0559211Z GO111MODULE=''
+2026-09-25T23:30:51.0559602Z GOAMD64='v1'
+2026-09-25T23:30:51.0559947Z GOARCH='amd64'
+2026-09-25T23:30:51.0560285Z GOAUTH='netrc'
+2026-09-25T23:30:51.0560702Z GOBIN='/home/runner/go/bin'
+2026-09-25T23:30:51.0561271Z GOCACHE='/home/runner/.cache/ms-go-build'
+2026-09-25T23:30:51.0561773Z GOCACHEPROG=''
+2026-09-25T23:30:51.0562142Z GODEBUG=''
+2026-09-25T23:30:51.0562600Z GOENV='/home/runner/.config/go/env'
+2026-09-25T23:30:51.0563104Z GOEXE=''
+2026-09-25T23:30:51.0563522Z GOEXPERIMENT=''
+2026-09-25T23:30:51.0563893Z GOFIPS140='off'
+2026-09-25T23:30:51.0564247Z GOFLAGS=''
+2026-09-25T23:30:51.0565733Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1867320196=/tmp/go-build -gno-record-gcc-switches'
+2026-09-25T23:30:51.0567286Z GOHOSTARCH='amd64'
+2026-09-25T23:30:51.0568062Z GOHOSTOS='linux'
+2026-09-25T23:30:51.0568428Z GOINSECURE=''
+2026-09-25T23:30:51.0568800Z GOMOD='/dev/null'
+2026-09-25T23:30:51.0569297Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-09-25T23:30:51.0570026Z GONOPROXY=''
+2026-09-25T23:30:51.0570384Z GONOSUMDB=''
+2026-09-25T23:30:51.0570716Z GOOS='linux'
+2026-09-25T23:30:51.0571098Z GOPACKAGESDRIVER=''
+2026-09-25T23:30:51.0571514Z GOPATH='/home/runner/go'
+2026-09-25T23:30:51.0571935Z GOPRIVATE=''
+2026-09-25T23:30:51.0572463Z GOPROXY='https://proxy.golang.org,direct'
+2026-09-25T23:30:51.0573197Z GOROOT='/opt/hostedtoolcache/go-87ee608c/1.27.1/x64'
+2026-09-25T23:30:51.0573788Z GOSUMDB='sum.golang.org'
+2026-09-25T23:30:51.0574221Z GOTELEMETRY='local'
+2026-09-25T23:30:51.0574795Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-09-25T23:30:51.0575330Z GOTMPDIR=''
+2026-09-25T23:30:51.0575699Z GOTOOLCHAIN='local'
+2026-09-25T23:30:51.0576484Z GOTOOLDIR='/opt/hostedtoolcache/go-87ee608c/1.27.1/x64/pkg/tool/linux_amd64'
+2026-09-25T23:30:51.0577504Z GOVCS=''
+2026-09-25T23:30:51.0577880Z GOVERSION='go1.27.1'
+2026-09-25T23:30:51.0578514Z GOWORK='/home/runner/work/TypeScript/TypeScript/go.work'
+2026-09-25T23:30:51.0579140Z MS_GO_NOSYSTEMCRYPTO=''
+2026-09-25T23:30:51.0579592Z PKG_CONFIG='pkg-config'
+2026-09-25T23:30:51.0579844Z 
+2026-09-25T23:30:51.0580341Z ##[endgroup]
+2026-09-25T23:30:51.0740482Z ##[end-action id=__self.__actions_setup-go;outcome=success;conclusion=success;duration_ms=9018]
+2026-09-25T23:30:51.0793621Z ##[group]Run npm ci
+2026-09-25T23:30:51.0793919Z [36;1mnpm ci[0m
+2026-09-25T23:30:51.1089354Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-25T23:30:51.1089756Z env:
+2026-09-25T23:30:51.1089990Z   GOTOOLCHAIN: local
+2026-09-25T23:30:51.1090236Z ##[endgroup]
+2026-09-25T23:30:54.7936232Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-09-25T23:30:58.8682465Z 
+2026-09-25T23:30:58.8683183Z added 253 packages, and audited 257 packages in 8s
+2026-09-25T23:30:58.8683532Z 
+2026-09-25T23:30:58.8683767Z 60 packages are looking for funding
+2026-09-25T23:30:58.8684703Z   run `npm fund` for details
+2026-09-25T23:30:58.8694553Z 
+2026-09-25T23:30:58.8695136Z found 0 vulnerabilities
+2026-09-25T23:30:58.9575849Z ##[group]Run npx hereby generate
+2026-09-25T23:30:58.9576181Z [36;1mnpx hereby generate[0m
+2026-09-25T23:30:58.9638692Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-25T23:30:58.9639042Z env:
+2026-09-25T23:30:58.9639234Z   GOTOOLCHAIN: local
+2026-09-25T23:30:58.9639453Z ##[endgroup]
+2026-09-25T23:30:59.3711732Z Using [33m~/work/TypeScript/TypeScript/Herebyfile.mjs[39m to run [34mgenerate[39m
+2026-09-25T23:30:59.3715302Z Starting [34mgenerate:ast[39m
+2026-09-25T23:30:59.4130085Z Starting [34mgenerate:lsp[39m
+2026-09-25T23:30:59.4132918Z Starting [34mgenerate:sync[39m
+2026-09-25T23:30:59.6216524Z Starting [34mgenerate:extension[39m
+2026-09-25T23:30:59.6234604Z Starting [34mgenerate:vendor[39m
+2026-09-25T23:31:00.0126414Z Generating encoder/decoder code...
+2026-09-25T23:31:02.1571574Z Compiling /home/runner/work/TypeScript/TypeScript/node_modules/@dprint/typescript/plugin.wasm
+2026-09-25T23:31:02.1592546Z Compiling /home/runner/work/TypeScript/TypeScript/node_modules/@dprint/json/plugin.wasm
+2026-09-25T23:31:02.1622869Z Compiling /home/runner/work/TypeScript/TypeScript/node_modules/dprint-plugin-yaml/plugin.wasm
+2026-09-25T23:31:02.1667981Z Compiling /home/runner/work/TypeScript/TypeScript/node_modules/@jakebailey/dprint-plugin-gofumpt/plugin.wasm
+2026-09-25T23:31:06.0650905Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:06.1352469Z Wrote /home/runner/work/TypeScript/TypeScript/tsc/internal/api/encoder/encoder_generated.go
+2026-09-25T23:31:07.7400470Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:07.7859334Z Wrote /home/runner/work/TypeScript/TypeScript/tsc/internal/api/encoder/decoder_generated.go
+2026-09-25T23:31:08.5867854Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:08.6242308Z Wrote /home/runner/work/TypeScript/TypeScript/packages/typescript/src/api/node/protocol.generated.ts
+2026-09-25T23:31:09.8093331Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:09.8473342Z Wrote /home/runner/work/TypeScript/TypeScript/packages/typescript/src/api/node/encoder.generated.ts
+2026-09-25T23:31:11.4069977Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:11.4534063Z Wrote /home/runner/work/TypeScript/TypeScript/packages/typescript/src/api/node/node.generated.ts
+2026-09-25T23:31:11.4535048Z Done!
+2026-09-25T23:31:11.4535495Z Generating Go AST code...
+2026-09-25T23:31:12.2915361Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:12.3344310Z Wrote /home/runner/work/TypeScript/TypeScript/tsc/internal/ast/ast_generated.go
+2026-09-25T23:31:12.4070222Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:12.4559649Z Wrote /home/runner/work/TypeScript/TypeScript/tsc/internal/ast/kind_generated.go
+2026-09-25T23:31:12.4560817Z Generating TS AST code...
+2026-09-25T23:31:12.6504698Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:12.6936431Z Generated /home/runner/work/TypeScript/TypeScript/packages/typescript/src/ast/ast.generated.ts
+2026-09-25T23:31:13.3008377Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:13.3578317Z Generated /home/runner/work/TypeScript/TypeScript/packages/typescript/src/ast/factory.generated.ts
+2026-09-25T23:31:13.5644631Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:13.6117737Z Generated /home/runner/work/TypeScript/TypeScript/packages/typescript/src/ast/is.generated.ts
+2026-09-25T23:31:13.8296294Z Generated /home/runner/work/TypeScript/TypeScript/packages/typescript/src/ast/visitor.generated.ts
+2026-09-25T23:31:13.8325951Z Generating sync API from async source...
+2026-09-25T23:31:13.8596236Z   src/api/async/types.ts → src/api/sync/types.ts
+2026-09-25T23:31:14.0293110Z   src/api/async/api.ts → src/api/sync/api.ts
+2026-09-25T23:31:14.8938323Z   test/async/api.test.ts → test/sync/api.test.ts
+2026-09-25T23:31:14.8982541Z   test/async/api.bench.ts → test/sync/api.bench.ts
+2026-09-25T23:31:14.9007990Z   test/async/astnav.test.ts → test/sync/astnav.test.ts
+2026-09-25T23:31:14.9037796Z   test/async/api.bench.ts → test/generators/api.bench.ts
+2026-09-25T23:31:14.9039055Z Formatting...
+2026-09-25T23:31:15.2119043Z Formatted [0m[1m6[0m files.
+2026-09-25T23:31:15.2553720Z Done.
+2026-09-25T23:31:15.2622367Z $ npm run -w native-preview generateLocBundle
+2026-09-25T23:31:15.2675014Z Finished [32mgenerate:sync[39m in 15.8s
+2026-09-25T23:31:15.2683659Z $ go env -json GOOS GOARCH GOROOT
+2026-09-25T23:31:15.2758788Z Using vscode-languageclient@10.1.1
+2026-09-25T23:31:15.3174781Z $ go tool golang.org/x/tools/cmd/stringer -type=Kind -output=kind_stringer_generated.go
+2026-09-25T23:31:15.3681576Z Finished [32mgenerate:vendor[39m in 15.7s
+2026-09-25T23:31:15.4087523Z 
+2026-09-25T23:31:15.4088033Z > native-preview@0.0.0 generateLocBundle
+2026-09-25T23:31:15.4088653Z > vscode-l10n-dev export --outDir ./l10n ./src
+2026-09-25T23:31:15.4089060Z 
+2026-09-25T23:31:15.4961135Z Warning: In union TextDocumentContentOptionsOrRegistrationOptions (object variants), Options and RegistrationOptions have identical required fields [schemes] — they are structurally indistinguishable and the unmarshal result is order-dependent.
+2026-09-25T23:31:15.6265255Z Searching for TypeScript/JavaScript files...
+2026-09-25T23:31:15.6368085Z Found 22 TypeScript files. Extracting strings...
+2026-09-25T23:31:15.8262291Z Formatted [0m[1m1[0m file.
+2026-09-25T23:31:15.8699998Z Successfully generated /home/runner/work/TypeScript/TypeScript/tsc/internal/lsp/lsproto/lsp_generated.go
+2026-09-25T23:31:15.8720225Z Finished [32mgenerate:lsp[39m in 16.4s
+2026-09-25T23:31:16.2608282Z go: downloading golang.org/x/tools v0.50.0
+2026-09-25T23:31:16.5369355Z Extracted 76 strings...
+2026-09-25T23:31:16.5373470Z Writing exported strings to: /home/runner/work/TypeScript/TypeScript/packages/vscode-typescript/l10n/bundle.l10n.json
+2026-09-25T23:31:16.5641313Z Finished [32mgenerate:extension[39m in 16.9s
+2026-09-25T23:31:16.5668528Z Starting [34mgenerate:extension-test[39m
+2026-09-25T23:31:16.5678733Z $ npm run -w native-preview generateLocTest
+2026-09-25T23:31:16.7034989Z 
+2026-09-25T23:31:16.7053994Z > native-preview@0.0.0 generateLocTest
+2026-09-25T23:31:16.7060182Z > vscode-l10n-dev generate-pseudo -o ./l10n/ ./l10n/bundle.l10n.json ./package.nls.json
+2026-09-25T23:31:16.7061163Z 
+2026-09-25T23:31:16.7132910Z go: downloading golang.org/x/sync v0.23.0
+2026-09-25T23:31:16.7463568Z go: downloading golang.org/x/mod v0.41.0
+2026-09-25T23:31:17.0968252Z Searching for L10N JSON files...
+2026-09-25T23:31:17.1309489Z Wrote 2 L10N JSON files.
+2026-09-25T23:31:17.2141482Z Finished [32mgenerate:extension-test[39m in 648ms
+2026-09-25T23:32:08.3242464Z $ dprint fmt kind_stringer_generated.go
+2026-09-25T23:32:08.3977576Z Finished [32mgenerate:ast[39m in 1m 9s
+2026-09-25T23:32:08.3978090Z Starting [34mgenerate:compiler[39m
+2026-09-25T23:32:08.4015093Z ##[error]skipped go tool golang.org/x/tools/cmd/stringer -type=Kind -output=kind_stringer_generated.go; dprint fmt kind_stringer_generated.go: codegen outputs are already up to date
+2026-09-25T23:32:08.4114436Z $ go run generate.go
+2026-09-25T23:32:08.8035745Z $ go tool golang.org/x/tools/cmd/stringer -type=SignatureKind -output=stringer_generated.go
+2026-09-25T23:33:27.8270576Z $ dprint fmt stringer_generated.go
+2026-09-25T23:33:28.0457225Z Formatted [0m[1m11[0m files.
+2026-09-25T23:33:28.1130353Z $ go tool golang.org/x/tools/cmd/stringer -type=ModuleKind -trimprefix=ModuleKind -output=modulekind_stringer_generated.go
+2026-09-25T23:33:28.5462039Z $ dprint fmt modulekind_stringer_generated.go
+2026-09-25T23:33:28.6294423Z $ go tool golang.org/x/tools/cmd/stringer -type=ScriptTarget -trimprefix=ScriptTarget -output=scripttarget_stringer_generated.go
+2026-09-25T23:33:28.8209141Z $ dprint fmt scripttarget_stringer_generated.go
+2026-09-25T23:33:28.9609758Z Generating enums from metadata and Go source...
+2026-09-25T23:33:29.0135040Z   SymbolFlags: 67 members → symbolFlags.enum.ts, symbolFlags.ts
+2026-09-25T23:33:29.0221123Z   CheckFlags: 31 members → checkFlags.enum.ts, checkFlags.ts
+2026-09-25T23:33:29.0327864Z   TypeFlags: 73 members → typeFlags.enum.ts, typeFlags.ts
+2026-09-25T23:33:29.0403500Z   ObjectFlags: 49 members → objectFlags.enum.ts, objectFlags.ts
+2026-09-25T23:33:29.0441216Z   SignatureFlags: 12 members → signatureFlags.enum.ts, signatureFlags.ts
+2026-09-25T23:33:29.0460096Z   SignatureKind: 2 members → signatureKind.enum.ts, signatureKind.ts
+2026-09-25T23:33:29.0480957Z   IndexKind: 2 members → indexKind.enum.ts, indexKind.ts
+2026-09-25T23:33:29.0530212Z   ElementFlags: 9 members → elementFlags.enum.ts, elementFlags.ts
+2026-09-25T23:33:29.0562864Z   TypePredicateKind: 4 members → typePredicateKind.enum.ts, typePredicateKind.ts
+2026-09-25T23:33:29.0624329Z   TypeFormatFlags: 26 members → typeFormatFlags.enum.ts, typeFormatFlags.ts
+2026-09-25T23:33:29.0644960Z   DiagnosticCategory: 4 members → diagnosticCategory.enum.ts, diagnosticCategory.ts
+2026-09-25T23:33:29.0862697Z   SyntaxKind: 386 members → syntaxKind.enum.ts, syntaxKind.ts
+2026-09-25T23:33:29.0928377Z   NodeFlags: 41 members → nodeFlags.enum.ts, nodeFlags.ts
+2026-09-25T23:33:29.0969365Z   OuterExpressionKinds: 13 members → outerExpressionKinds.enum.ts, outerExpressionKinds.ts
+2026-09-25T23:33:29.0979246Z   JSDeclarationKind: 7 members → jsDeclarationKind.enum.ts, jsDeclarationKind.ts
+2026-09-25T23:33:29.1032812Z   ModifierFlags: 39 members → modifierFlags.enum.ts, modifierFlags.ts
+2026-09-25T23:33:29.1048401Z   ModuleDetectionKind: 4 members → moduleDetectionKind.enum.ts, moduleDetectionKind.ts
+2026-09-25T23:33:29.1071025Z   ModuleKind: 14 members → moduleKind.enum.ts, moduleKind.ts
+2026-09-25T23:33:29.1091044Z   ModuleResolutionKind: 6 members → moduleResolutionKind.enum.ts, moduleResolutionKind.ts
+2026-09-25T23:33:29.1108189Z   NewLineKind: 3 members → newLineKind.enum.ts, newLineKind.ts
+2026-09-25T23:33:29.1131985Z   ScriptTarget: 14 members → scriptTarget.enum.ts, scriptTarget.ts
+2026-09-25T23:33:29.1149769Z   JsxEmit: 6 members → jsxEmit.enum.ts, jsxEmit.ts
+2026-09-25T23:33:29.1171620Z   ScriptKind: 6 members → scriptKind.enum.ts, scriptKind.ts
+2026-09-25T23:33:29.1218375Z   TokenFlags: 27 members → tokenFlags.enum.ts, tokenFlags.ts
+2026-09-25T23:33:29.1239204Z   DiagnosticDirectivePolicy: 2 members → diagnosticDirectivePolicy.enum.ts, diagnosticDirectivePolicy.ts
+2026-09-25T23:33:29.1259758Z   SpanMapKind: 3 members → spanMapKind.enum.ts, spanMapKind.ts
+2026-09-25T23:33:29.1281671Z   SpanMapFidelity: 4 members → spanMapFidelity.enum.ts, spanMapFidelity.ts
+2026-09-25T23:33:29.1313214Z   SpanMapFeature: 22 members → spanMapFeature.enum.ts, spanMapFeature.ts
+2026-09-25T23:33:29.1350029Z   NodeBuilderFlags: 33 members → nodeBuilderFlags.enum.ts, nodeBuilderFlags.ts
+2026-09-25T23:33:29.1479278Z   CompletionItemKind: 25 members → completionItemKind.enum.ts, completionItemKind.ts
+2026-09-25T23:33:29.1507463Z   EmitOnly: 3 members → emitOnly.enum.ts, emitOnly.ts
+2026-09-25T23:33:29.1560549Z   InternalSymbolName: 20 members → internalSymbolName.enum.ts, internalSymbolName.ts
+2026-09-25T23:33:29.1612411Z Getting values from go
+2026-09-25T23:33:29.2311873Z Formatted [0m[1m1[0m file.
+2026-09-25T23:33:29.2730394Z $ go run /home/runner/work/TypeScript/TypeScript/tsc/internal/api/enum_values_generated.go
+2026-09-25T23:33:37.9019086Z All generated values match Go.
+2026-09-25T23:33:37.9769275Z Formatted [0m[1m64[0m files.
+2026-09-25T23:33:38.0719578Z Done.
+2026-09-25T23:33:38.1349685Z $ go -C ./tools run ./gen-proto ../tsc/internal/api/proto.go ../packages/typescript/src/api/proto.generated.ts
+2026-09-25T23:33:40.5506066Z $ dprint fmt packages/typescript/src/api/proto.generated.ts
+2026-09-25T23:33:40.6051827Z Formatted [0m[1m1[0m file.
+2026-09-25T23:33:40.6563512Z $ go tool golang.org/x/tools/cmd/stringer -type=LanguageVariant -output=languagevariant_stringer_generated.go
+2026-09-25T23:33:40.8413755Z $ dprint fmt languagevariant_stringer_generated.go
+2026-09-25T23:33:40.9094838Z $ go tool golang.org/x/tools/cmd/stringer -type=ScriptKind -output=scriptkind_stringer_generated.go
+2026-09-25T23:33:41.0945012Z $ dprint fmt scriptkind_stringer_generated.go
+2026-09-25T23:33:41.1229438Z Formatted [0m[1m1[0m file.
+2026-09-25T23:33:41.1732894Z $ go tool golang.org/x/tools/cmd/stringer -type=Tristate -output=tristate_stringer_generated.go
+2026-09-25T23:33:41.3587380Z $ dprint fmt tristate_stringer_generated.go
+2026-09-25T23:33:41.4475932Z $ go run generate.go -diagnostics diagnostics_generated.go -loc loc_generated.go -locdir loc -locproject ../../../tools/LocProject.json -locsource diagnosticMessages.generated.json
+2026-09-25T23:33:41.4675103Z go: downloading github.com/klauspost/compress v1.20.0
+2026-09-25T23:33:43.0135755Z $ dprint fmt diagnostics_generated.go loc_generated.go
+2026-09-25T23:33:43.0976786Z Formatted [0m[1m1[0m file.
+2026-09-25T23:33:43.2710059Z $ go tool golang.org/x/tools/cmd/stringer -type=Category -output=stringer_generated.go
+2026-09-25T23:33:43.7092282Z $ dprint fmt stringer_generated.go
+2026-09-25T23:33:43.7927294Z $ go tool golang.org/x/tools/cmd/stringer -type=ExportSyntax -output=export_stringer_generated.go
+2026-09-25T23:34:24.5205906Z $ dprint fmt export_stringer_generated.go
+2026-09-25T23:34:24.6060358Z $ go tool golang.org/x/tools/cmd/stringer -type=Kind -trimprefix=Kind -output=project_stringer_generated.go
+2026-09-25T23:34:45.2633929Z $ dprint fmt project_stringer_generated.go
+2026-09-25T23:34:45.3543482Z $ go tool github.com/matryer/moq -stub -fmt goimports -pkg projecttestutil -out clientmock_generated.go ../../project Client
+2026-09-25T23:34:45.3641076Z go: downloading github.com/matryer/moq v0.7.1
+2026-09-25T23:34:46.6062608Z $ dprint fmt clientmock_generated.go
+2026-09-25T23:34:46.6450228Z Formatted [0m[1m1[0m file.
+2026-09-25T23:34:46.6943555Z $ go tool github.com/matryer/moq -stub -fmt goimports -pkg projecttestutil -out npmexecutormock_generated.go ../../project/ata NpmExecutor
+2026-09-25T23:34:46.8693210Z $ dprint fmt npmexecutormock_generated.go
+2026-09-25T23:34:46.9468649Z $ go tool github.com/matryer/moq -fmt goimports -pkg vfsmock -out vfsmock/mock_generated.go . FS
+2026-09-25T23:34:47.1195629Z $ dprint fmt vfsmock/mock_generated.go
+2026-09-25T23:34:47.1558277Z Formatted [0m[1m1[0m file.
+2026-09-25T23:34:47.2065610Z $ go tool golang.org/x/tools/cmd/stringer -type=Usage -trimprefix=Usage -output=stringer_generated.go
+2026-09-25T23:34:47.6782487Z $ dprint fmt stringer_generated.go
+2026-09-25T23:34:47.9824299Z Formatted [0m[1m2[0m files.
+2026-09-25T23:34:48.0260795Z Generated Unicode tables.
+2026-09-25T23:34:48.0757879Z skipped go -C ./tools run ./gen-proto ../tsc/internal/api/proto.go ../packages/typescript/src/api/proto.generated.ts; dprint fmt packages/typescript/src/api/proto.generated.ts: codegen outputs are already up to date
+2026-09-25T23:34:48.1300312Z Enums are up to date.
+2026-09-25T23:34:48.1301460Z Finished [32mgenerate:compiler[39m in 2m 39.7s
+2026-09-25T23:34:48.1302439Z Completed [34mgenerate[39m in 3m 48.7s
+2026-09-25T23:34:48.1756592Z ##[group]Run npx hereby check:scripts
+2026-09-25T23:34:48.1757586Z [36;1mnpx hereby check:scripts[0m
+2026-09-25T23:34:48.1818097Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-25T23:34:48.1818430Z env:
+2026-09-25T23:34:48.1818617Z   GOTOOLCHAIN: local
+2026-09-25T23:34:48.1818836Z ##[endgroup]
+2026-09-25T23:34:48.5003286Z Using [33m~/work/TypeScript/TypeScript/Herebyfile.mjs[39m to run [34mcheck:scripts[39m
+2026-09-25T23:34:48.5006343Z Starting [34mcheck:scripts[39m
+2026-09-25T23:34:48.5007407Z Type-checking ./tools/scripts/gen/tsconfig.json
+2026-09-25T23:34:48.5010047Z $ tsc -p ./tools/scripts/gen/tsconfig.json
+2026-09-25T23:34:48.7820100Z Type-checking ./tools/scripts/tsc/tsconfig.json
+2026-09-25T23:34:48.7821082Z $ tsc -p ./tools/scripts/tsc/tsconfig.json
+2026-09-25T23:34:49.0936709Z Type-checking ./tsc/internal/lsp/lsproto/_generate/tsconfig.json
+2026-09-25T23:34:49.0937968Z $ tsc -p ./tsc/internal/lsp/lsproto/_generate/tsconfig.json
+2026-09-25T23:34:49.5676748Z Finished [32mcheck:scripts[39m in 1s
+2026-09-25T23:34:49.5678033Z Completed [34mcheck:scripts[39m in 1s
+2026-09-25T23:34:49.5850859Z ##[group]Run git add .
+2026-09-25T23:34:49.5851124Z [36;1mgit add .[0m
+2026-09-25T23:34:49.5911698Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-25T23:34:49.5912044Z env:
+2026-09-25T23:34:49.5912232Z   GOTOOLCHAIN: local
+2026-09-25T23:34:49.5912447Z ##[endgroup]
+2026-09-25T23:34:49.8560595Z ##[group]Run git diff --staged --exit-code --stat
+2026-09-25T23:34:49.8560988Z [36;1mgit diff --staged --exit-code --stat[0m
+2026-09-25T23:34:49.8621544Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-25T23:34:49.8621898Z env:
+2026-09-25T23:34:49.8622088Z   GOTOOLCHAIN: local
+2026-09-25T23:34:49.8622310Z ##[endgroup]
+2026-09-25T23:34:49.8794441Z  packages/typescript/src/api/proto.generated.ts | 1 -
+2026-09-25T23:34:49.8795321Z  1 file changed, 1 deletion(-)
+2026-09-25T23:34:49.8805910Z ##[error]Process completed with exit code 1.
+2026-09-25T23:34:49.8876005Z Post job cleanup.
+2026-09-25T23:34:49.8880551Z ##[start-action display=Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e;id=__0d94b832-b0f4-4e50-bc49-7ec87588c51b.__actions_setup-go]
+2026-09-25T23:34:49.8884139Z ##[end-action id=__0d94b832-b0f4-4e50-bc49-7ec87588c51b.__actions_setup-go;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-09-25T23:34:49.8953938Z Post job cleanup.
+2026-09-25T23:34:49.9787873Z [command]/usr/bin/git version
+2026-09-25T23:34:49.9825731Z git version 2.55.0
+2026-09-25T23:34:49.9864974Z Temporarily overriding HOME='/home/runner/work/_temp/b8fed1cd-bc6a-41cb-8c75-989bb5a60b0c' before making global git config changes
+2026-09-25T23:34:49.9866649Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-25T23:34:49.9870918Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TypeScript/TypeScript
+2026-09-25T23:34:49.9902332Z Removing SSH command configuration
+2026-09-25T23:34:49.9909884Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-25T23:34:49.9945409Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-25T23:34:50.0213118Z Removing HTTP extra header
+2026-09-25T23:34:50.0219437Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-25T23:34:50.0254530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-25T23:34:50.0524707Z Removing includeIf entries pointing to credentials config files
+2026-09-25T23:34:50.0531727Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-25T23:34:50.0560540Z includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git.path
+2026-09-25T23:34:50.0561854Z includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git/worktrees/*.path
+2026-09-25T23:34:50.0562856Z includeif.gitdir:/github/workspace/.git.path
+2026-09-25T23:34:50.0563684Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-25T23:34:50.0568417Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git.path
+2026-09-25T23:34:50.0589800Z /home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:34:50.0601128Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-e698f190\-586f\-4c2e\-99a2\-64689ba9097e\.config
+2026-09-25T23:34:50.0637594Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git/worktrees/*.path
+2026-09-25T23:34:50.0661591Z /home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:34:50.0670367Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/TypeScript/TypeScript/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-e698f190\-586f\-4c2e\-99a2\-64689ba9097e\.config
+2026-09-25T23:34:50.0703337Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-25T23:34:50.0724899Z /github/runner_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:34:50.0732217Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-e698f190\-586f\-4c2e\-99a2\-64689ba9097e\.config
+2026-09-25T23:34:50.0762141Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-25T23:34:50.0783291Z /github/runner_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config
+2026-09-25T23:34:50.0791775Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-e698f190\-586f\-4c2e\-99a2\-64689ba9097e\.config
+2026-09-25T23:34:50.0833784Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-25T23:34:50.1088020Z Removing credentials config '/home/runner/work/_temp/git-credentials-e698f190-586f-4c2e-99a2-64689ba9097e.config'
+2026-09-25T23:34:50.1228079Z Cleaning up orphan processes
