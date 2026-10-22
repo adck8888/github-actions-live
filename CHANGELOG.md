@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1
+
+- Fixed the Pro checkout links: the "Upgrade to Pro" buttons opened a dead page after the store moved
+  to a new address.
+
 ## 0.3.0
 
 - A run page: status, summary cards, why it failed (the error in context, clickable file

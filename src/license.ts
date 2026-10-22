@@ -11,8 +11,8 @@ export const PRO = {
   /** Products that unlock Pro; one product carries both the monthly and the lifetime variant. */
   productIds: [1390632] as number[],
   /** The product's checkout, where the buyer picks Monthly or Lifetime. */
-  monthlyUrl: 'https://adcktools.lemonsqueezy.com/checkout/buy/42858d40-be39-45dd-8aaa-725fb0694223',
-  lifetimeUrl: 'https://adcktools.lemonsqueezy.com/checkout/buy/42858d40-be39-45dd-8aaa-725fb0694223',
+  monthlyUrl: 'https://briproof.lemonsqueezy.com/checkout/buy/42858d40-be39-45dd-8aaa-725fb0694223',
+  lifetimeUrl: 'https://briproof.lemonsqueezy.com/checkout/buy/42858d40-be39-45dd-8aaa-725fb0694223',
   monthlyPrice: '$4/month',
   lifetimePrice: '$39 once',
   trialDays: 7

@@ -2,7 +2,7 @@
   "name": "github-actions-live",
   "displayName": "GitHub Actions Live",
   "description": "Watch GitHub Actions runs live in VS Code: jobs and steps as they run, every check of your commit in the status bar, logs that open on the failing line, re-run, cancel, artifacts, deployments, Fix in Chat. Pro: CI errors in Problems, notifications, compare with the last green run, flaky and slow steps.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "publisher": "adck8888",
   "license": "MIT",
   "icon": "media/icon.png",
